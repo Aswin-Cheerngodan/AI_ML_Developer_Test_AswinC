@@ -144,3 +144,61 @@ You can modify this part to change the query:
 ```bash
 query = "What is the main objective of the project?"
 ```
+## results
+![Alt text](RAG-System/results/Screenshot%20(343).png)
+![Alt text](RAG-System/results/Screenshot%20(344).png)
+![Alt text](RAG-System/results/Screenshot%20(345).png)
+![Alt text](RAG-System/results/Screenshot%20(346).png)
+![Alt text](RAG-System/results/Screenshot%20(347).png)
+![Alt text](RAG-System/results/Screenshot%20(348).png)
+![Alt text](RAG-System/results/Screenshot%20(349).png)
+
+---
+---
+---
+
+
+#  Stock Chart Trend Classifier
+
+This FastAPI application classifies stock chart images as either **Uptrend** or **Downtrend** using a CNN model. The model is loaded from a trained `.h5` file. Users can upload stock chart images via a web interface to receive instant trend predictions.
+
+---
+
+##  Features
+
+- Upload stock chart images via a simple web UI
+- Preprocessing with OpenCV
+- CNN-based classification using TensorFlow
+- FastAPI backend with Jinja2 templated frontend
+- Dockerized and deployable on Google Cloud Run
+
+---
+
+---
+
+##  Local Setup Instructions (Without Docker)
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/Aswin-Cheerngodan/AI_ML_Developer_Test_AswinC.git
+cd stock_chart
+```
+### 2. Set up virtual environment Install Python dependencies
+```bash
+python -m venv venv
+venv\Scripts\activate (windows)
+pip install -r requirements.txt
+```
+### 3. Run the FastAPI app locally
+```bash
+python -m app.main
+```   
+Open in browser: http://localhost:8000
+
+
+
+
+
+
+
