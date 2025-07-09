@@ -54,9 +54,31 @@ def categorizer(review):
 
 
 if __name__=="__main__":
-    review = "Overall it was a good experience, I Loved it" 
-    sentiment = categorizer(review)
-    print(sentiment)
+    reviews = [
+    "Absolutely loved the food and the service was excellent!",
+    "The food was cold and took forever to arrive.",
+    "The ambiance was perfect and the staff were very friendly.",
+    "Worst experience ever — completely ruined my evening.",
+    "I had a great experience — will definitely come back!",
+    "The waiter was rude and inattentive.",
+    "The pizza was amazing, fresh, and full of flavor.",
+    "Overpriced and underwhelming. Definitely not worth it.",
+    "Highly recommend this place for a cozy dinner night.",
+    "The place was dirty and smelled bad.",
+    "The customer service was top-notch and the coffee was delicious.",
+    "I got sick after eating here. Never coming back.",
+    "Quick service, clean environment, and very tasty meals.",
+    "Terrible customer service and bland food.",
+    "I enjoyed every bite! This place never disappoints.",
+    "The portions were tiny and the taste was awful.",
+    "Five stars for the great food and warm hospitality!",
+    "Waited 40 minutes only to get the wrong order.",
+    "One of the best dining experiences I’ve had in a long time.",
+    "The food looked good but tasted horrible."
+] 
+    for review in reviews:
+        sentiment = categorizer(review)
+        print(review," : ",sentiment)
 
 
 
