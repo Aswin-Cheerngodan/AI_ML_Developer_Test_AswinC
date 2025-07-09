@@ -153,6 +153,9 @@ query = "What is the main objective of the project?"
 ![Alt text](RAG-System/results/Screenshot%20(348).png)
 ![Alt text](RAG-System/results/Screenshot%20(349).png)
 
+### For Referance Training notebooks added
+
+---
 ---
 ---
 ---
@@ -196,8 +199,138 @@ python -m app.main
 ```   
 Open in browser: http://localhost:8000
 
+## Docker Setup (Local)
+You can run the app locally using Docker :
 
+### 2. Build the Docker Image
+```bash
+docker build -t trend-classifier-app .
+```
+### 3. Run the Container
+```bash
+docker run -p 8000:8000 trend-classifier-app
+```
+This maps the container's port 8000 to your local machine's port 8000.
 
+### 4. Access the App in Your Browser
+Visit:
+```bash
+http://localhost:8000
+```
+You’ll see the UI to upload stock chart images and get predictions (Uptrend / Downtrend).
+
+## Test App
+
+Upload a stock chart image (.png, .jpg, etc.)
+
+Click the "Predict Trend" button.
+
+You'll see a prediction like:
+```bash
+Prediction: Uptrend
+```
+
+#### 3. Test via Postman
+Open Postman.
+
+Create a new POST request to:
+
+```bash
+http://localhost:8000/predict
+```
+Under the Body tab:
+
+Select form-data
+
+Add a key: file, type: File
+
+Upload an image file
+
+Click Send.
+You will receive an HTML response showing either Uptrend or Downtrend.
+
+## Training and Testing results
+![Alt text](stock_chart/results/Screenshot%20(352).png)
+![Alt text](stock_chart/results/Screenshot%20(353).png)
+![Alt text](stock_chart/results/Screenshot%20(354).png)
+![Alt text](stock_chart/results/Screenshot%202025-07-09%20202412.png)
+
+## Postman API Testing
+![Alt text](stock_chart/results/Screenshot%202025-07-09%20201646.png)
+
+### For Referance Training notebooks added
+
+---
+---
+---
+---
+
+# Yelp Review Sentiment Classification using DistilBERT
+
+This project fine-tunes a pre-trained DistilBERT model for binary sentiment classification (positive or negative) on Yelp customer reviews.
+
+---
+
+## Dataset
+
+A custom Yelp review dataset was used. Each row includes:
+- `text`: Customer review content
+- `label`: 1 (negative), 2 (positive), remapped to 0 and 1 respectively
+
+---
+
+## Preprocessing Steps
+
+- Loaded the CSV without headers and manually assigned column names.
+- Mapped sentiment labels: `1 → 0` (negative), `2 → 1` (positive)
+- Removed missing values
+- Tokenized using Hugging Face's `AutoTokenizer` with:
+  - `max_length=256`
+  - `padding='max_length'`
+  - `truncation=True`
+- Split dataset: 80% training, 20% testing
+- Converted to Hugging Face `Dataset` format
+
+---
+
+##  Model Configuration
+
+- **Base Model**: `distilbert-base-uncased`
+- **Framework**: PyTorch + Hugging Face Transformers
+- **Trainer API** used for efficient training
+Why?
+DistilBERT is a smaller, faster, and lighter version of BERT that still retains ~97% of BERT's performance
+
+### Training Parameters
+| Parameter         | Value     |
+|------------------|-----------|
+| Epochs           | 1         |
+| Learning Rate    | 2e-5      |
+| Train Batch Size | 16        |
+| Eval Batch Size  | 16        |
+| Evaluation       | Per Epoch |
+
+---
+
+## Evaluation Metrics
+
+- **Accuracy**
+- **F1-score**
+
+Evaluation
+```text
+Accuracy: 0.948500
+F1 Score: 0.948538
+```
+
+# Summary
+DistilBERT was fine-tuned for binary sentiment classification on Yelp reviews.
+
+Achieved ~94.9% accuracy on the test set.
+
+Balanced precision and recall, with a good F1-score.
+
+## Training notebook added for reference
 
 
 
