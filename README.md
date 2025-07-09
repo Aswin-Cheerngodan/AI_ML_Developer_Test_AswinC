@@ -255,6 +255,10 @@ You will receive an HTML response showing either Uptrend or Downtrend.
 ![Alt text](stock_chart/results/Screenshot%20(354).png)
 ![Alt text](stock_chart/results/Screenshot%202025-07-09%20202412.png)
 
+
+![Alt text](stock_chart/results/Screenshot%202025-07-10%20013244.png)
+![Alt text](stock_chart/results/Screenshot%202025-07-10%20013514.png)
+
 ## Postman API Testing
 ![Alt text](stock_chart/results/Screenshot%202025-07-09%20201646.png)
 
@@ -329,6 +333,11 @@ DistilBERT was fine-tuned for binary sentiment classification on Yelp reviews.
 Achieved ~94.9% accuracy on the test set.
 
 Balanced precision and recall, with a good F1-score.
+
+## sample results
+## results
+![Alt text](sentiment_analysis/results/Screenshot%20(355).png)
+![Alt text](sentiment_analysis/results/Screenshot%20(356).png)
 
 ## Training notebook added for reference
 
