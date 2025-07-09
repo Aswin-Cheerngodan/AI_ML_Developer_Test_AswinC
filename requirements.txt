@@ -11,4 +11,9 @@ pypdf==5.7.0
 faiss-cpu==1.11.0
 
 # Stock Chart Trend
-
+fastapi==0.116.0
+tensorflow-cpu==2.19.0
+opencv-python==4.12.0.88
+uvicorn==0.35.0
+python-multipart==0.0.20
+jinja2==3.1.6
